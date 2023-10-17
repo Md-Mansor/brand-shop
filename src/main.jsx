@@ -13,6 +13,8 @@ import AddItem from './Components/AddItem/AddItem.jsx';
 import Cart from './Components/Cart/Cart.jsx';
 import LogIn from './Components/LogIn/LogIn.jsx';
 import Register from './Components/Register/Register.jsx';
+import About from './Components/Footer/AboutUs/About.jsx';
+import Contact from './Components/Footer/Contact/Contact.jsx';
 
 
 const router = createBrowserRouter([
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
     ]
   },
