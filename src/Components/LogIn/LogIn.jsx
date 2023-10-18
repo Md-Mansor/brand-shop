@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
+import { Result } from 'postcss';
 
 const LogIn = () => {
+    const { logIn } = useContext(AuthContext)
+
+    const [existUser, setExistUser] = useState()
+
     const handelSignIn = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const user = { email, password };
-        console.log(user);
+        console.log(email, password);
+        logIn(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
 
     }
     return (
