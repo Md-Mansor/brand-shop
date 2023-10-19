@@ -14,8 +14,7 @@ const NavBar = () => {
             <div className="  gap-5 items-center">
                 <div className='flex gap-5'>
                     <Link to="/" className='font-medium text-lg'>Home</Link>
-                    <Link to="/feature" className='font-medium text-lg'>Features</Link>
-                    <Link to="/service" className='font-medium text-lg'>Service</Link>
+                    <Link to="/addItem" className='font-medium text-lg'>Add Item</Link>
                 </div>
 
 
@@ -24,7 +23,6 @@ const NavBar = () => {
                 <img className='navbar-center rounded-3xl w-52 hidden lg:block ' src={logo} alt=" navbar image" />
             </div>
             <div className="flex gap-5">
-                <Link to="/addItem" className='font-medium text-lg'>Add Item</Link>
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle">
                         <div className="indicator">

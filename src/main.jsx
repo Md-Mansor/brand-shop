@@ -7,8 +7,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Components/Home/Home.jsx';
-import Features from './Components/Feature/Features.jsx';
-import Service from './Components/Service/Service.jsx';
 import AddItem from './Components/AddItem/AddItem.jsx';
 import Cart from './Components/Cart/Cart.jsx';
 import LogIn from './Components/LogIn/LogIn.jsx';
@@ -16,6 +14,8 @@ import Register from './Components/Register/Register.jsx';
 import About from './Components/Footer/AboutUs/About.jsx';
 import Contact from './Components/Footer/Contact/Contact.jsx';
 import AuthProvider from './Components/Provider/AuthProvider.jsx';
+import Data from './Components/Data/Data.jsx';
+import Brand from './Components/Brand/Brand.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,17 +25,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
-      },
-      {
-        path: "/feature",
-        element: <Features></Features>,
-      },
-      {
-        path: "/service",
-        element: <Service></Service>,
+        element: <Home></Home>,
         loader: () => fetch('service.json')
       },
+
       {
         path: "/addItem",
         element: <AddItem></AddItem>,
@@ -59,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/data",
+        element: <Data></Data>
+      },
+      {
+        path: "/brand",
+        element: <Brand></Brand>
       },
     ]
   },

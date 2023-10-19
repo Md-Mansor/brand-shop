@@ -1,33 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AddItem = () => {
     return (
-        <div>
-            <form>
-                <div className=''>
-                    <h1>Name</h1>
-                    <input type="text" placeholder="email" className="input input-bordered w-full max-w-xs" />
-                </div>
-                <div>
-                    <h1>Image</h1>
-                    <input type="text" placeholder="Image URL" className="input input-bordered w-full max-w-xs" />
-                </div>
-                <div>
-                    <h1>Select Brand</h1>
-                    <div className=" w-full max-w-xs">
-                        <select className="select select-bordered">
-                            <option disabled selected>Pick one</option>
-                            <option> BMW</option>
-                            <option>Toyota</option>
-                            <option>Ferrari</option>
-                            <option>Honda</option>
-                            <option>Tesla</option>
-                        </select>
-                    </div>
-
-                </div>
-            </form>
-
+        <div className=' gap-10 p-24 border w-fit mx-auto'>
+            <div className='flex items-center  p-6 gap-6 '>
+                <p className='font-bold text-lg'>Add Newly launch Brand </p>
+                <Link to="/brand">
+                    <button className='btn btn-outline'>Add Brand </button>
+                </Link>
+            </div>
+            <div className='flex items-center p-6 gap-6'>
+                <p className='font-bold text-lg'>Add Brand Item By Category</p>
+                <Link to="/data">
+                    <button className='btn btn-outline'>Add Item</button>
+                </Link>
+            </div>
+            <div></div>
         </div>
     );
 };
