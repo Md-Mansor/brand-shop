@@ -22,7 +22,7 @@ const Data = () => {
         <div className="bg-teal-50 p-24">
             <h2 className="text-3xl font-extrabold">Add Brand New Car</h2>
             <form onSubmit={handelAddData}>
-                {/* form name and quantity row */}
+
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
