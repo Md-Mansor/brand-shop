@@ -1,10 +1,14 @@
-import { useContext } from 'react';
+import { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const [registerError, SetRegisterError] = useState('');
+    const [success, setSuccess] = useState('')
 
 
     const handelRegister = e => {
@@ -13,13 +17,33 @@ const Register = () => {
         const name = form.name.value
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        SetRegisterError('')
+        setSuccess('')
+
+
+        console.log(name, email, password);
+
+
+        if (password.length < 6) {
+            toast.error('password must be at least 6 character')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            toast.error('at least one uppercase letter')
+            return;
+        }
+        else if (!/[#?!@$%^&*-]/.test(password)) {
+            toast.error('give at least one special character')
+            return;
+        }
+
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                toast.success('user created')
             })
             .catch(error => {
-                console.error(error);
+                toast.error('user exist')
+
             })
     }
 
@@ -54,8 +78,11 @@ const Register = () => {
                         </div>
                         <h1>Already Have An Account <Link to="/login" className='text-blue-700'>Log In</Link></h1>
                     </form>
+                    <p>{success}</p>
+                    <p>{registerError}</p>
                 </div>
             </div>
+            <Toaster></Toaster>
         </div>
     );
 };

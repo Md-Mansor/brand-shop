@@ -53,6 +53,10 @@ const Data = () => {
                             <option disabled selected >Brand Name</option>
                             <option>BMW</option>
                             <option>Toyota</option>
+                            <option>Mercedes</option>
+                            <option>Tesla</option>
+                            <option>Honda</option>
+                            <option>Rolls-Royce</option>
                         </select>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">

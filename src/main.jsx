@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('service.json')
+        loader: () => fetch('http://localhost:5000/brand')
       },
 
       {

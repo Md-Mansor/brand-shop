@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import { useLoaderData } from 'react-router-dom';
 
+
 const Home = () => {
-    const services = useLoaderData()
+    const brand = useLoaderData()
+
+
+    const [services, setService] = useState([]);
+
+    useEffect(() => {
+        fetch('service.json')
+            .then(res => res.json())
+            .then(data => setService(data))
+
+
+    }, [])
 
     return (
         <div>
@@ -15,10 +27,24 @@ const Home = () => {
                     services.map((service) => (
                         <div className=' '>
                             <div className="card bg-sky-200 shadow-xl">
-                                <figure><img src={service.image} alt="Shoes" className='min-w-full h-96' /></figure>
+                                <figure><img src={service.image} alt="brand logo" className='min-w-full h-96' /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{service.type}</h2>
                                     <p>{service.title}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+            <div className=' lg:grid grid-cols-3 gap-5  '>
+                {
+                    brand.map((brand) => (
+                        <div>
+                            <div className="hover:bg-red-300 border rounded-2xl">
+                                <figure><img src={brand.Image} alt="brand logo" className=' p-10 mx-auto w-72 h-72 ' /></figure>
+                                <div className="card-body">
+                                    <h2 className="font-bold">{brand.Brand}</h2>
                                 </div>
                             </div>
                         </div>
