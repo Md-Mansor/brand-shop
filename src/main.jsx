@@ -16,6 +16,7 @@ import Contact from './Components/Footer/Contact/Contact.jsx';
 import AuthProvider from './Components/Provider/AuthProvider.jsx';
 import Data from './Components/Data/Data.jsx';
 import Brand from './Components/Brand/Brand.jsx';
+import Page from './Components/BrandPage/Page.jsx';
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
         path: "/brand",
         element: <Brand></Brand>
       },
+      {
+        path: '/brand/:brandBrand',
+        element: <Page></Page>,
+        loader: () => fetch('http://localhost:5000/data')
+      }
     ]
   },
 ]);

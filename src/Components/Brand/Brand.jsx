@@ -14,7 +14,7 @@ const Brand = () => {
         const newBrand = { Brand, Image }
 
         console.log(newBrand);
-        // send data to server
+        // send brand to server
         fetch('http://localhost:5000/brand', {
             method: "POST",
             headers: {
@@ -27,6 +27,7 @@ const Brand = () => {
                 console.log(data);
                 if (data.insertedId) {
                     toast.success('Successfully Created Brand!')
+                    form.reset();
                 }
             })
 

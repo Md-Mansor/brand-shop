@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
-import { useLoaderData } from 'react-router-dom';
+import Marquee from "react-fast-marquee";
+import { Link, useLoaderData } from 'react-router-dom';
 
 
 const Home = () => {
@@ -20,8 +21,9 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-
-
+            <p className='text-red-500 text-xl bg-green-200'>
+                <Marquee pauseOnHover={true} speed={150}>Deal With Us & Buy A brand new car and  Take Our Free Service for a limited time</Marquee>
+            </p>
             <div className=' space-y-4 lg:grid place-content-center  items-center grid-cols-3 gap-5 p-5 '>
                 {
                     services.map((service) => (
@@ -37,20 +39,24 @@ const Home = () => {
                     ))
                 }
             </div>
-            <div className=' lg:grid grid-cols-3 gap-5  '>
+
+            <div className=' lg:grid grid-cols-3 gap-5 py-10 '>
                 {
                     brand.map((brand) => (
                         <div>
-                            <div className="hover:bg-red-300 border rounded-2xl">
-                                <figure><img src={brand.Image} alt="brand logo" className=' p-10 mx-auto w-72 h-72 ' /></figure>
-                                <div className="card-body">
-                                    <h2 className="font-bold">{brand.Brand}</h2>
+                            <Link to={`/brand/${brand.Brand}`}>
+                                <div className="hover:bg-red-300 border rounded-2xl">
+                                    <figure><img src={brand.Image} alt="brand logo" className=' p-10 mx-auto w-72 h-72 ' /></figure>
+                                    <div className="card-body">
+                                        <h2 className="font-bold">{brand.Brand}</h2>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     ))
                 }
             </div>
+
         </div>
     );
 };

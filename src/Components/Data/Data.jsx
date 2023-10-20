@@ -1,4 +1,5 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Data = () => {
     const handelAddData = e => {
@@ -15,6 +16,21 @@ const Data = () => {
         const newItem = { name, Price, Brand, Description, Image }
 
         console.log(newItem);
+        // send data to server
+        fetch('http://localhost:5000/data', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success('Successfully Added Product')
+                }
+            })
     }
 
     return (
@@ -81,6 +97,10 @@ const Data = () => {
                 <input type="submit" value="Add Data" className="btn btn-block" />
 
             </form>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     );
 };
