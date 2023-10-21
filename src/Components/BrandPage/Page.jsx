@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 
 const Page = () => {
     const { brandBrand } = useParams();
@@ -15,13 +15,25 @@ const Page = () => {
     return (
         <div>
             <p>data will load here</p>
-            {brandData.map((product, index) => (
-                <div key={index}>
-                    <p>Name: {product.name}</p>
-                    <p>Price: {product.Price}</p>
-                    {/* Add more properties as needed */}
-                </div>
-            ))}
+            <div className='lg:grid grid-cols-2 gap-5 items-center my-5'>
+                {brandData.map((product, index) => (
+                    <div className='  '>
+                        <div className=" rounded-2xl bg-base-100 shadow-xl">
+                            <img src={product.Image} alt="Shoes" className="rounded-s-2xl mx-auto h-96 w-3/5 py-4" />
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title">Name : {product.name}</h2>
+                                <div className="flex gap-5">
+                                    <Link to={`/data/${product._id}`}>
+                                        <button className="btn btn-outline btn-info"> View Details And Price</button>
+                                    </Link>
+
+                                    <button className='btn btn-outline btn-accent'>Add To Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

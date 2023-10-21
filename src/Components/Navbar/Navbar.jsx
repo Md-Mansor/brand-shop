@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from "../../assets/logo.png";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const NavBar = () => {
+    // const { user } = useContext(AuthContext)
     const handelClick = (e) => {
         e.preventDefault()
     }

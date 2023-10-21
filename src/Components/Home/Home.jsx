@@ -46,7 +46,7 @@ const Home = () => {
                         <div>
                             <Link to={`/brand/${brand.Brand}`}>
                                 <div className="hover:bg-red-300 border rounded-2xl">
-                                    <figure><img src={brand.Image} alt="brand logo" className=' p-10 mx-auto w-72 h-72 ' /></figure>
+                                    <figure><img src={brand.Image} alt="brand logo" className=' p-10 mx-auto  ' /></figure>
                                     <div className="card-body">
                                         <h2 className="font-bold">{brand.Brand}</h2>
                                     </div>

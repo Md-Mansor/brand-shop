@@ -52,7 +52,7 @@ const LogIn = () => {
                     <div>
                         <h1 className="text-5xl font-bold">Login now!</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className=" w-full max-w-sm shadow-2xl rounded-2xl px-5 ">
                         <form onSubmit={handelSignIn} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -74,7 +74,7 @@ const LogIn = () => {
                         </form>
                         <div>
                             <p className="text-center p-4">Or Log In With google</p>
-                            <button onClick={handelGoogleSignIn} className="btn btn-outline btn-info">Google</button>
+                            <button onClick={handelGoogleSignIn} className="btn btn-outline btn-info w-full mb-4">Google</button>
                         </div>
                     </div>
                 </div>
