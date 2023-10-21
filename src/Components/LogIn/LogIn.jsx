@@ -67,7 +67,7 @@ const LogIn = () => {
                                 <input type="password" placeholder="password" className="input input-bordered" name='password' required />
                             </div>
                             <div className="form-control mt-6">
-                                <button onClick={handelSignIn} className="btn btn-primary">Login</button>
+                                <input type='submit' className="btn btn-primary" value="Log In" />
                             </div>
                             <h1>have not any account then <Link to="/register" className='text-blue-700'>Register Here</Link></h1>
 

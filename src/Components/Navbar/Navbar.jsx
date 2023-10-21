@@ -1,14 +1,25 @@
 import React from 'react';
 import logo from "../../assets/logo.png";
 import { Link } from 'react-router-dom';
-// import { useContext } from 'react';
-// import { AuthContext } from '../Provider/AuthProvider';
+import { useContext } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const NavBar = () => {
-    // const { user } = useContext(AuthContext)
+    const { logOut, user } = useContext(AuthContext)
     const handelClick = (e) => {
         e.preventDefault()
     }
+    const handelLogOut = () => {
+        logOut()
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    console.log(user);
+
     return (
 
 
@@ -25,9 +36,18 @@ const NavBar = () => {
                 <Link to="/cart" className="btn btn-primary btn-block  font-medium text-lg">
                     View cart
                 </Link>
-                <Link to="/login" >
-                    <button className='btn btn-outline btn-error'>Log In</button>
-                </Link>
+                {
+                    user ? (
+                        <div>
+                            <p>{user.email}</p>
+                            <button onClick={handelLogOut} className="btn btn-secondary">Log Out </button>
+                        </div>) :
+                        <Link to="/login" >
+                            <button className='btn btn-outline btn-error'>Log In</button>
+                        </Link>
+
+                }
+
             </div>
         </div >
     );
