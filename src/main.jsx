@@ -18,17 +18,19 @@ import Data from './Components/Data/Data.jsx';
 import Brand from './Components/Brand/Brand.jsx';
 import Page from './Components/BrandPage/Page.jsx';
 import Details from './Components/Details/Details.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/brand')
+        loader: () => fetch('https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/brand')
       },
 
       {
@@ -66,12 +68,12 @@ const router = createBrowserRouter([
       {
         path: '/brand/:brandBrand',
         element: <Page></Page>,
-        loader: () => fetch('http://localhost:5000/data')
+        loader: () => fetch('https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/data')
       },
       {
         path: '/data/:id',
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/data/${params.id}`)
+        loader: ({ params }) => fetch(`https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/data/${params.id}`)
       }
     ]
   },
