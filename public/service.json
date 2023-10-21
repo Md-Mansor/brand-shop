@@ -3,36 +3,36 @@
         "id": 1,
         "type": "Oil Change",
         "title": "Basic Oil Change Service",
-        "image": "https://i.ibb.co/R6X06pn/pexels-daniel-andraski-13065690.jpg"
+        "image": "https://i.ibb.co/GWdnJtP/pexels-daniel-andraski-13065690.jpg"
     },
     {
         "id": 2,
         "type": "Tire Rotation",
         "title": "Tire Rotation and Balancing",
-        "image": "https://i.ibb.co/Vp9mTWb/pexels-gustavo-fring-6870331.jpg"
+        "image": "https://i.ibb.co/XbY7Pbq/pexels-vincenzo-malagoli-2922140.jpg"
     },
     {
         "id": 3,
         "type": "Brake Service",
         "title": "Brake Pad Replacement",
-        "image": "https://i.ibb.co/Lhvrd6K/pexels-jay-pizzle-4022545.jpg"
+        "image": "https://i.ibb.co/GWdnJtP/pexels-daniel-andraski-13065690.jpg"
     },
     {
         "id": 4,
         "type": "Car Wash",
         "title": "Exterior and Interior Car Wash",
-        "image": "https://i.ibb.co/64BGBqD/pexels-jan-kop-iva-3354648.jpg"
+        "image": "https://i.ibb.co/ZVTzf0r/pexels-jan-kop-iva-3354648.jpg"
     },
     {
         "id": 5,
         "type": "Engine Tune-up",
         "title": "Comprehensive Engine Tune-up",
-        "image": "https://i.ibb.co/BCWmh65/pexels-juan-montes-11456554.jpg"
+        "image": "https://i.ibb.co/s5THkYS/pexels-pixabay-159293.jpg"
     },
     {
         "id": 6,
         "type": "Diagnostic Service",
         "title": "Vehicle Diagnostic and Troubleshooting",
-        "image": "https://i.ibb.co/Y0yjKTX/pexels-erik-mclean-4732635.jpg"
+        "image": "https://i.ibb.co/XtnmTGM/pexels-tim-samuel-5835359.jpg.jpg"
     }
 ]
