@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/brand')
+        loader: () => fetch('https://b8a10-brandshop-server-side-md-mansor.vercel.app/brand')
       },
 
       {
@@ -68,12 +68,12 @@ const router = createBrowserRouter([
       {
         path: '/brand/:brandBrand',
         element: <Page></Page>,
-        loader: () => fetch('https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/data')
+        loader: () => fetch('https://b8a10-brandshop-server-side-md-mansor.vercel.app/data')
       },
       {
         path: '/data/:id',
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/data/${params.id}`)
+        loader: ({ params }) => fetch(`https://b8a10-brandshop-server-side-md-mansor.vercel.app/data/${params.id}`)
       }
     ]
   },

@@ -15,7 +15,7 @@ const Brand = () => {
 
         console.log(newBrand);
         // send brand to server
-        fetch('https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/brand', {
+        fetch('https://b8a10-brandshop-server-side-md-mansor.vercel.app/brand', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

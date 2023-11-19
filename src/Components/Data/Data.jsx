@@ -17,7 +17,7 @@ const Data = () => {
 
         console.log(newItem);
         // send data to server
-        fetch('https://b8a10-brandshop-server-side-md-mansor-9x7w15ey6.vercel.app/data', {
+        fetch('https://b8a10-brandshop-server-side-md-mansor.vercel.app/data', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
